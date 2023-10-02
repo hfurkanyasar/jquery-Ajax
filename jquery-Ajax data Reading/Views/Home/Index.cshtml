@@ -1,0 +1,29 @@
+﻿<h2>Ajax İle dosya okuma </h2>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#j").click(function () {
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts",
+                dataType: "text",
+                success: function (data) {
+                    $("#divv").html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.log("AJAX Hatası: " + error);
+                    alert("Dosya okunamadı: " + error);
+                }
+
+            });
+        });
+    });
+</script>
+<div id="divv">
+    <button id="j">Dosya oku</button>
+</div>

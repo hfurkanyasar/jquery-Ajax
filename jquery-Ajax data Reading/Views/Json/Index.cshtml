@@ -1,0 +1,16 @@
+﻿<h2>HFY json okuma ajax</h2>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#j").click(function () {
+            $.getJSON("https://jsonplaceholder.typicode.com/posts", function (veri) {
+                $.each(veri, function (key, item) {
+                    $("ul").append("<li>" + item.id + " - " + item.title + "</li>"); // Burada yazım hatası vardı
+                });
+            });
+        });
+    });
+</script>
+<button id="j">JSON oku</button>
+<ul></ul>

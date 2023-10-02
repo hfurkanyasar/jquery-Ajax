@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+
+
+
+
+<h2>Index</h2>
+
+<button id="j1">1.jq</button>
+<button id="j2">2.jq</button>
+<button id="j3">hide</button>
+<button id="j4">show</button>
+<button id="j5">hide/show</button>
+<button id="j6">css buton</button>
+<button id="j7">length</button>
+<button id="j8">takimlar</button>
+<p>Hızır furkan Yaşar ben </p>
+<ul>
+   
+</ul>
+
+<script>
+    $("#j1").click(function () {
+
+        alert("1. jqueery çalışıyorum")
+    })
+    $("#j2").click(function () {
+
+        alert("j2.")
+    })
+    $("p").on({
+        mouseover: function () {
+
+            $(this).css("color", "blue");
+        },
+        mouseleave: function () {
+            $(this).css("color", "red");
+        }
+    })
+    $("#j3").click(function () {
+
+        $("p").hide();
+
+    })
+    $("#j4").click(function () {
+
+        $("p").show();
+
+    })
+    $("#j5").click(function () {
+
+        $("p").toggle(1000);
+
+    })
+    $("#j6").css({ "background-color": "white", "color": "red" })
+
+    $("#j6").click(function () {
+        $("p").append(" hfy eklendi ")
+        
+    })
+
+    $("#j7").click(function () {
+        alert($("button").length)
+
+    })
+
+    var takimlar = ["fb", "gs", "ts", "bjk"]
+
+    $("#j8").click(function () {
+        $.each(takimlar, function (key, value) {
+            //console.log(value);
+            $("ul").append("<li>" + value + "</li>")
+        })
+        
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
